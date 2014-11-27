@@ -24,7 +24,27 @@ PageCurl
     imagePageProvider.setBackBitmaps(backBitmaps);
     curlView.setPageProvider(imagePageProvider);
 
-#### this library is also Asynchronous loading data; use following:
+#### you are also define PageProvider
+
+    public class TestPageProvider extends BasePageProvider {
+
+        @Override
+        public Object getItem(int index, boolean isBack) {
+            return null;
+        }
+
+        @Override
+        public void drawBitmap(Canvas c, Rect r, int index, boolean isBack) {
+
+        }
+
+        @Override
+        public int getPageCount() {
+            return 0;
+        }
+    }
+
+#### you are also  Asynchronous loading data
 
     public class PageProviderHandler extends BasePageProviderHandler {
         public PageAdapterHandler(CurlView curlView) {
@@ -49,7 +69,8 @@ PageCurl
             // do something
         }
     }
-detail please look code
+
+##### detail please look code
 
 
 
