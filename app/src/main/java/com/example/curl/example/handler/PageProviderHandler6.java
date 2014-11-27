@@ -1,13 +1,13 @@
 package com.example.curl.example.handler;
 
-import bf.fc.page.curl.adapter.handler.BasePageProviderHandler;
+import bf.fc.page.curl.provider.handler.BasePageProviderHandler;
 import bf.fc.page.curl.view.CurlView;
 
 /**
  * Created by rjhy on 14-11-26.
  */
-public class PageAdapterHandler6 extends BasePageProviderHandler {
-    public PageAdapterHandler6(CurlView curlView) {
+public class PageProviderHandler6 extends BasePageProviderHandler {
+    public PageProviderHandler6(CurlView curlView) {
         super(curlView);
     }
 

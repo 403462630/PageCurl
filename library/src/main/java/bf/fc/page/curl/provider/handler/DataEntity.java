@@ -1,4 +1,4 @@
-package bf.fc.page.curl.adapter.handler;
+package bf.fc.page.curl.provider.handler;
 
 public class DataEntity{
     Integer index;

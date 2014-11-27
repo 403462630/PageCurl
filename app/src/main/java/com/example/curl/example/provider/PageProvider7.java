@@ -4,8 +4,8 @@ import android.graphics.Bitmap;
 
 import java.util.List;
 
-import bf.fc.page.curl.adapter.ImagePageProvider;
-import bf.fc.page.curl.adapter.handler.BasePageProviderHandler;
+import bf.fc.page.curl.provider.ImagePageProvider;
+import bf.fc.page.curl.provider.handler.BasePageProviderHandler;
 
 /**
  * Created by rjhy on 14-11-26.

@@ -3,8 +3,8 @@ package com.example.curl.example;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 
+import com.example.curl.example.handler.PageProviderHandler7;
 import com.example.curl.example.provider.PageProvider7;
-import com.example.curl.example.handler.PageAdapterHandler7;
 
 import java.util.Arrays;
 import java.util.List;
@@ -16,7 +16,7 @@ import bf.fc.page.curl.view.CurlView;
 public class ExampleActivity7 extends ActionBarActivity {
     private CurlView curlView;
     private PageProvider7 adapter7;
-    private PageAdapterHandler7 handler7;
+    private PageProviderHandler7 handler7;
     private int index = 0;
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -35,7 +35,7 @@ public class ExampleActivity7 extends ActionBarActivity {
         curlView = (CurlView) findViewById(R.id.curl_view);
 
         adapter7 = new PageProvider7();
-        handler7 = new PageAdapterHandler7(this, curlView);
+        handler7 = new PageProviderHandler7(this, curlView);
         adapter7.setHandler(handler7);
         adapter7.setImages(getImages());
 

@@ -1,49 +1,32 @@
 package com.example.curl.example.handler;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.os.Build;
 import android.text.Layout;
 import android.text.StaticLayout;
 import android.text.TextPaint;
-import android.util.LruCache;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import bf.fc.page.curl.adapter.handler.BasePageProviderHandler;
-import bf.fc.page.curl.adapter.handler.DataEntity;
+import bf.fc.page.curl.provider.handler.BasePageProviderHandler;
 import bf.fc.page.curl.view.CurlView;
 
 /**
  * Created by rjhy on 14-11-26.
  */
-public class PageAdapterHandler8 extends BasePageProviderHandler {
+public class PageProviderHandler7 extends BasePageProviderHandler {
     private Context context;
     private Bitmap loadBitmap;
     private Bitmap errorBitmap;
-    private LruCache<Object, DataEntity> cache;
-
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
-    public PageAdapterHandler8(Context context, CurlView curlView) {
+    public PageProviderHandler7(Context context, CurlView curlView) {
         super(curlView);
         this.context = context;
         loadBitmap = canvasBitmap("图片正在加载中");
         errorBitmap = canvasBitmap("图片加载出错");
-
-        int maxMemory = (int) Runtime.getRuntime().maxMemory();
-        int cacheSize = maxMemory / 8;
-        // 设置图片缓存大小为程序最大可用内存的1/8
-        cache = new LruCache<Object, DataEntity>(cacheSize) {
-            @Override
-            protected int sizeOf(Object key, DataEntity entity) {
-                return ((Bitmap)entity.getValue()).getByteCount();
-            }
-        };
     }
 
     private Bitmap canvasBitmap(String str) {
@@ -68,7 +51,6 @@ public class PageAdapterHandler8 extends BasePageProviderHandler {
         return errorBitmap;
     }
 
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
     @Override
     public Object fetchData(int index, boolean isBack, Object data) throws Exception {
         HttpURLConnection conn = null;
@@ -77,24 +59,11 @@ public class PageAdapterHandler8 extends BasePageProviderHandler {
             conn = (HttpURLConnection) url.openConnection();
             conn.setConnectTimeout(1000*10);
             Bitmap bitmap = BitmapFactory.decodeStream(conn.getInputStream());
-            DataEntity dataEntity = new DataEntity(index, isBack, bitmap, false);
-            cache.put(data, dataEntity);
             return bitmap;
         } finally {
             if (conn != null) {
                 conn.disconnect();
             }
         }
-    }
-
-    @TargetApi(Build.VERSION_CODES.HONEYCOMB_MR1)
-    @Override
-    public Object getItem(int index, boolean isBack, Object data) {
-        DataEntity entity = cache.get(data);
-        if (entity != null) {
-//            saveData(index, isBack, entity.getValue(), true);
-            return entity.getValue();
-        }
-        return super.getItem(index, isBack, data);
     }
 }

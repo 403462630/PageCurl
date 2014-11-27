@@ -7,7 +7,7 @@ import android.support.v7.app.ActionBarActivity;
 
 import java.util.ArrayList;
 
-import bf.fc.page.curl.adapter.ImagePageProvider;
+import bf.fc.page.curl.provider.ImagePageProvider;
 import bf.fc.page.curl.view.CurlRenderer;
 import bf.fc.page.curl.view.CurlView;
 

@@ -1,4 +1,4 @@
-package bf.fc.page.curl.adapter;
+package bf.fc.page.curl.provider;
 
 import android.graphics.Bitmap;
 import android.graphics.Canvas;

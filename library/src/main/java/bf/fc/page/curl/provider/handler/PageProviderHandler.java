@@ -1,4 +1,4 @@
-package bf.fc.page.curl.adapter.handler;
+package bf.fc.page.curl.provider.handler;
 
 /**
  * Created by rjhy on 14-11-25.

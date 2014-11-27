@@ -5,7 +5,7 @@ import android.os.Bundle;
 
 import java.util.ArrayList;
 
-import bf.fc.page.curl.adapter.TextPageProvider;
+import bf.fc.page.curl.provider.TextPageProvider;
 import bf.fc.page.curl.view.CurlRenderer;
 import bf.fc.page.curl.view.CurlView;
 

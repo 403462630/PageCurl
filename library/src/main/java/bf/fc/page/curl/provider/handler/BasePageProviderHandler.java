@@ -1,4 +1,4 @@
-package bf.fc.page.curl.adapter.handler;
+package bf.fc.page.curl.provider.handler;
 
 import android.os.Handler;
 import android.os.Looper;

@@ -1,7 +1,7 @@
 package com.example.curl.example.provider;
 
-import bf.fc.page.curl.adapter.TextPageProvider;
-import bf.fc.page.curl.adapter.handler.BasePageProviderHandler;
+import bf.fc.page.curl.provider.TextPageProvider;
+import bf.fc.page.curl.provider.handler.BasePageProviderHandler;
 
 /**
  * Created by rjhy on 14-11-26.

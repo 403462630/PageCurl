@@ -26,7 +26,7 @@ PageCurl
 
 #### this library is also Asynchronous loading data; use following:
 
-    public class PageAdapterHandler extends BasePageProviderHandler {
+    public class PageProviderHandler extends BasePageProviderHandler {
         public PageAdapterHandler(CurlView curlView) {
             super(curlView);
         }
