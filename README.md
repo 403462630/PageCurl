@@ -1,30 +1,30 @@
 PageCurl
 ========
 
-######Usage
+#Usage
 <hr/>
-## first step
+#### first step
 
     <bf.fc.page.curl.view.CurlView
             android:id="@+id/curl_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-## second step
+#### second step
 
     TextPageProvider textPageProvider = new TextPageProvider();
     textPageProvider.setStrings(contents);
     textPageProvider.setBackStrings(backContents);
     curlView.setPageProvider(textPageProvider);
 
-#  Or
+######  Or
 
     ImagePageProvider imagePageProvider = new ImagePageProvider();
     imagePageProvider.setBitmaps(bitmaps);
     imagePageProvider.setBackBitmaps(backBitmaps);
     curlView.setPageProvider(imagePageProvider);
 
-## this library is also Asynchronous loading data; use following:
+#### this library is also Asynchronous loading data; use following:
 
     public class PageAdapterHandler extends BasePageProviderHandler {
         public PageAdapterHandler(CurlView curlView) {
