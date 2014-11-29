@@ -1,6 +1,9 @@
 PageCurl
 ========
 
+![竖屏](https://github.com/403462630/PageCurl/blob/master/jdfw3.gif)
+
+![横屏](https://github.com/403462630/PageCurl/blob/master/jdfw4.gif)
 #Usage
 <hr/>
 #### first step
